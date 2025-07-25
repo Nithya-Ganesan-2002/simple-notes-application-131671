@@ -1,13 +1,45 @@
 /* CSS Variables for Theme Management */
 :root {
   /* Light theme colors */
+  --primary: #1976d2;
+  --secondary: #424242;
+  --accent: #ffb300;
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
   --text-primary: #282c34;
-  --text-secondary: #61dafb;
-  --border-color: #e9ecef;
-  --button-bg: #007bff;
+  --text-secondary: #424242;
+  --border-color: #e0e0e0;
+  --button-bg: #1976d2;
   --button-text: #ffffff;
+  --disabled: #bdbdbd;
+}
+
+/* Elements shared by Figma and not directly mapped to component structure */
+.note-list-item:focus, .note-list-item[aria-current="true"] {
+  outline: 2px solid var(--accent);
+  z-index: 1;
+}
+
+.note-title:focus, .note-body:focus {
+  border-color: var(--primary);
+}
+
+::-webkit-input-placeholder { color: var(--disabled); }
+::-moz-placeholder { color: var(--disabled); }
+:-ms-input-placeholder { color: var(--disabled); }
+::placeholder { color: var(--disabled); }
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+  aside {
+    min-width: 120px !important;
+    max-width: 170px !important;
+  }
+  main {
+    padding: 1em !important;
+  }
 }
 
 [data-theme="dark"] {
